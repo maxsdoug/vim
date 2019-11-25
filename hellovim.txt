@@ -1,0 +1,110 @@
+*******************
+* Maxwell Douglas *
+* Nov 25 2019     *
+*******************
+
+Working in Vim for the first time.  Interesting.
+Here are some notes on basic commands from the beginner's guide, link below.
+linux.com/tutorials/vim-101-beginners-guide-vim/
+
+All of these must be executed from command mode!
+--------------------------------------------------------------------------
+NAVIGATING A FILE
+--------------------------------------------------------------------------
+Command	| Action
+--------+-----------------------------------------------------------------
+h	| move left one character
+j	| move down one line
+k	| move up one line
+l	| move right one character
+0	| move to the beginning of the line
+$	| move to the end of the line
+w	| move forward one word
+b	| move back one word
+G	| move to EOF
+gg	| move to beginning of file
+`.	| move to last edit
+--------------------------------------------------------------------------
+
+So there's a lot of these commands to learn, but one cool trick that's easy
+and already applicable is that you can run a command multiple times by
+prefacing it with a number.
+
+For example, typing "10k" in command-mode will move the cursor down 10 lines.
+Much better than tapping the down-arrow 10 times.
+
+Next up is editing.
+
+--------------------------------------------------------------------------
+EDITING A FILE
+--------------------------------------------------------------------------
+Command	| Action
+--------+-----------------------------------------------------------------
+x	| delete a single character
+d	| prefaces the delete operation
+dw	| delete one word
+d0	| delete to the beginning of a line
+d$	| delete to the end of a line
+dgg	| delete to the beginning of a file
+dG	| delete to the end of a file
+u	| undo
+C-r	| redo
+--------------------------------------------------------------------------
+
+Notice here that the way you delete something is by combining 'd' with a
+navigation command.  A lot of the time vim operates this way; commands
+can be combined to become very powerful.
+
+Moving onto find and replace.
+
+--------------------------------------------------------------------------
+FIND AND REPLACE
+--------------------------------------------------------------------------
+Command			| Action
+------------------------+-------------------------------------------------
+/text			| searches the document for 'text' going forward
+?text			| searches the document for 'text' going backward
+n			| finds next instance of search going forward
+N			| finds next instance of search going backward
+%s/text/newtext/g	| replaces all instances of 'text' with 'newtext'
+%s/text/newtext/gc	| replaces instances of 'text' with 'newtext',
+			| confirms before making each change
+--------------------------------------------------------------------------
+
+/g looks a lot like 'global' from regex doesn't it?  My assumption is that
+regex works in there, but that will require some experimentation.
+
+At this point we can delete things, but not copy and paste.  Let's fix that.
+
+The last text from a delete operation is stored in the buffer for pasting,
+meaning a delete is more like a cut.  
+
+--------------------------------------------------------------------------
+SELECT, COPY, AND PASTE
+--------------------------------------------------------------------------
+Command	| Action
+--------+-----------------------------------------------------------------
+v	| highlight one character
+V	| highlight one line
+C-v	| highlight one column
+p	| paste after current line
+P	| paste on current line
+y	| yank text into the buffer
+--------------------------------------------------------------------------
+
+Now we can move through a file and make some basic edits, but we need to save
+and exit vim!
+
+Saving and quitting occurs in what can be called 'last-line mode'.  These
+commands are all prefaced with ':'.
+
+--------------------------------------------------------------------------
+SAVING AND QUITTING
+--------------------------------------------------------------------------
+Command		| Action
+----------------+---------------------------------------------------------
+:w [file]	| writes to file; specifying [file] writes to that file
+:q		| quit
+:q!		| quit without writing changes
+--------------------------------------------------------------------------
+
