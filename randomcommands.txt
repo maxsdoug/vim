@@ -1,0 +1,14 @@
+Some random commands that may prove useful.  Anything I find interesting
+will, ideally, be added here.
+
++------------------+-----------------------------------------------------+
+| Command          | Description                                         |
+--------------------------------------------------------------------------
+:edit <filename>   | Jumps to <filename>                                 
+--------------------------------------------------------------------------
+:vsplit <filename> | Splits screen vertically and opens <filename>
+                   |
+    CTRL+w, l      | Switches to the right split window
+    CTRL+w, h      | Switches to the left split window
+--------------------------------------------------------------------------
+
